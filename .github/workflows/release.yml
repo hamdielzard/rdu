@@ -35,7 +35,7 @@ jobs:
 
           # macOS Intel
           - target: x86_64-apple-darwin
-            runner: macos-13
+            runner: macos-latest
             archive: tar.gz
 
           # Linux x86_64 glibc
