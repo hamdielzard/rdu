@@ -1,0 +1,17 @@
+[package]
+name          = "rdu"
+version       = "0.1.0"
+edition       = "2024"
+repository    = "https://github.com/hamdielzard/rdu"
+description   = "A fast, tree-style disk usage viewer"
+license       = "MIT"
+
+[dependencies]
+clap          = { version = "4.5", features = ["derive"] }
+clap_complete = "4.5"
+colored       = "2.1"
+rayon         = "1.10"
+
+[profile.release]
+strip         = "debuginfo"
+lto           = true
