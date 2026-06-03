@@ -107,7 +107,7 @@ fn scan_dir(path: &Path, name: String, depth: usize, max_depth: Option<usize>) -
         .filter_map(|de| scan_dirent(de, depth + 1, max_depth).ok())
         .collect();
 
-    children.sort_unstable_by(|a, b| b.size.cmp(&a.size));
+    children.sort_unstable_by_key(|b| std::cmp::Reverse(b.size));
 
     let size: u64 = children.iter().map(|e| e.size).sum();
 
